@@ -56,8 +56,8 @@ const transparencyItems = [
   },
   {
     icon: Radar,
-    title: "Model Audit",
-    text: "Track where recommendations moved after sessions, price changes, penalties, and new weekend signals.",
+    title: "Prediction Accuracy",
+    text: "Review race-by-race model performance and understand how projections evolve over the season.",
   },
   {
     icon: Brain,
@@ -66,10 +66,56 @@ const transparencyItems = [
   },
 ];
 
+const socialProofItems = [
+  {
+    label: "Practice Sessions Analyzed",
+    value: "FP1 • FP2 • FP3",
+  },
+  {
+    label: "Transfer Penalty Modeling",
+    value: "Included",
+  },
+  {
+    label: "Race-by-Race Validation",
+    value: "Every Grand Prix",
+  },
+  {
+    label: "Transparent Recommendations",
+    value: "100% Explainable",
+  },
+];
+
 const practiceSessions = [
   "FP1 establishes the first baseline for team pace, long-run reliability, and setup direction.",
   "FP2 increases confidence in representative race pace and flags drivers outperforming their price.",
   "FP3 tightens the recommendation before qualifying by weighting final setup, consistency, and risk signals.",
+];
+
+const comingSoonItems = [
+  {
+    title: "Team Import",
+    text: "Import your current team and evaluate upgrade paths.",
+  },
+  {
+    title: "Captain Optimizer",
+    text: "Find the highest-value captain for every race weekend.",
+  },
+  {
+    title: "Transfer Simulator",
+    text: "Explore scenarios before spending transfers.",
+  },
+  {
+    title: "Prediction Accuracy Tracking",
+    text: "Review historical model performance and improvement.",
+  },
+  {
+    title: "Practice Session Insights",
+    text: "Understand how sessions change recommendations.",
+  },
+  {
+    title: "Historical Backtesting",
+    text: "Compare projections against real fantasy results.",
+  },
 ];
 
 export default function Home() {
@@ -100,13 +146,13 @@ export default function Home() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.055] px-3 py-2 text-sm text-slate-300">
               <Sparkles aria-hidden className="h-4 w-4 text-pit-cyan" />
-              AI-powered F1 Fantasy optimizer
+              Explainable F1 Fantasy Optimizer
             </p>
             <h1 className="mt-7 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
               Stop Guessing. Start Gaining Points.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              AI-powered F1 Fantasy optimizer with explainable recommendations.
+              Build better F1 Fantasy teams with transparent AI recommendations powered by practice data, transfer analysis and race-by-race model validation.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -142,11 +188,11 @@ export default function Home() {
               </div>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                {["Budget", "Projected", "Risk"].map((label, index) => (
+                {["Cost", "Projected", "Risk"].map((label, index) => (
                   <div key={label} className="rounded-md bg-white/[0.045] p-4">
                     <p className="text-xs text-slate-500">{label}</p>
                     <p className="mt-2 font-mono text-xl text-white">
-                      {["$99.7m", "284.6", "Low"][index]}
+                      {["$98.3m", "95.8", "Low"][index]}
                     </p>
                   </div>
                 ))}
@@ -164,6 +210,25 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-surface-900/70 px-5 py-16 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            Built for serious F1 Fantasy players
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {socialProofItems.map((item) => (
+              <article
+                key={item.label}
+                className="rounded-lg border border-white/10 bg-white/[0.045] p-6 text-center"
+              >
+                <p className="text-sm font-semibold text-white">{item.label}</p>
+                <p className="mt-3 font-mono text-sm text-pit-cyan">{item.value}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -263,6 +328,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="px-5 py-24 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Coming Soon"
+            title="What's Coming Next"
+            description="The first launch focuses on explainable recommendations, with deeper planning tools coming next."
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {comingSoonItems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-lg border border-white/10 bg-white/[0.045] p-6"
+              >
+                <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                <p className="mt-3 leading-7 text-slate-300">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="waitlist" className="px-5 py-24 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-3xl rounded-lg border border-white/10 bg-surface-900/90 p-6 text-center shadow-red-glow sm:p-10">
           <CheckCircle2 aria-hidden className="mx-auto h-10 w-10 text-pit-lime" />
@@ -275,12 +361,20 @@ export default function Home() {
           <div className="mt-8">
             <WaitlistForm />
           </div>
+          <p className="mt-4 text-sm text-slate-500">
+            No spam. Only product updates and early access invitations.
+          </p>
         </div>
       </section>
 
       <footer className="border-t border-white/10 px-5 py-8 sm:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-semibold text-white">PitWall Fantasy</p>
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-slate-400 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="font-semibold text-white">PitWall Fantasy</p>
+            <p className="mt-2 max-w-md">
+              AI-powered F1 Fantasy optimizer with explainable recommendations.
+            </p>
+          </div>
           <p>Coming Soon</p>
         </div>
       </footer>
