@@ -6,10 +6,41 @@ import { FormEvent, useState } from "react";
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    setError("");
+
+    const normalizedEmail = email.trim().toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setError("Enter a valid email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: normalizedEmail }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Waitlist submission failed.");
+      }
+
+      setEmail(normalizedEmail);
+      setSubmitted(true);
+    } catch {
+      setError("We could not save your email. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -31,7 +62,7 @@ export function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-3 sm:flex-row">
+    <form onSubmit={onSubmit} className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
       <label className="relative flex-1">
         <span className="sr-only">Email address</span>
         <Mail
@@ -49,10 +80,16 @@ export function WaitlistForm() {
       </label>
       <button
         type="submit"
+        disabled={isSubmitting}
         className="h-14 rounded-md bg-white px-6 py-4 text-sm font-semibold text-surface-950 transition hover:bg-pit-cyan focus:outline-none focus:ring-4 focus:ring-pit-cyan/20"
       >
         Join Waitlist
       </button>
+      {error ? (
+        <p className="text-sm font-medium text-pit-red sm:basis-full" role="alert">
+          {error}
+        </p>
+      ) : null}
     </form>
   );
 }
