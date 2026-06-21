@@ -20,7 +20,7 @@ export function WaitlistForm() {
             <Check aria-hidden className="h-5 w-5" />
           </span>
           <div>
-            <p className="font-semibold text-white">You are on the PitWall waitlist.</p>
+            <p className="font-semibold text-white">You are on the F1 DecisionIQ waitlist.</p>
             <p className="mt-1 text-sm text-slate-300">
               We will send early access updates to {email}.
             </p>

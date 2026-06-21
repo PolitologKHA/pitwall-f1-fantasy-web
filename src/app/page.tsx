@@ -121,17 +121,17 @@ const comingSoonItems = [
 export default function Home() {
   return (
     <main className="overflow-hidden bg-surface-950 text-white">
-      <section className="relative min-h-screen px-5 pb-14 pt-6 sm:px-8 lg:px-10">
+      <section className="relative min-h-[720px] px-5 pb-14 pt-6 sm:px-8 lg:min-h-[760px] lg:px-10">
         <div className="track-grid absolute inset-0 opacity-70" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-pit-cyan/70 to-transparent" />
 
         <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between py-3">
-          <a href="#" className="flex items-center gap-3" aria-label="PitWall Fantasy home">
+          <a href="#" className="flex items-center gap-3" aria-label="F1 DecisionIQ home">
             <span className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-white/10 shadow-red-glow">
               <Activity aria-hidden className="h-5 w-5 text-pit-red" />
             </span>
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-white">
-              PitWall Fantasy
+              F1 DecisionIQ
             </span>
           </a>
           <a
@@ -146,7 +146,7 @@ export default function Home() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.055] px-3 py-2 text-sm text-slate-300">
               <Sparkles aria-hidden className="h-4 w-4 text-pit-cyan" />
-              Explainable F1 Fantasy Optimizer
+              Fantasy Decision Engine
             </p>
             <h1 className="mt-7 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
               Stop Guessing. Start Gaining Points.
@@ -238,7 +238,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Strategy"
             title="Choose the risk profile that matches your race weekend."
-            description="PitWall Fantasy makes recommendations for different competitive contexts, from defending a lead to chasing a league rival."
+            description="F1 DecisionIQ makes recommendations for different competitive contexts, from defending a lead to chasing a league rival."
           />
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {strategies.map((strategy) => (
@@ -258,7 +258,7 @@ export default function Home() {
               Every recommendation shows its working.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-300 sm:text-lg">
-              Serious fantasy players need more than a lineup. PitWall Fantasy explains why one driver wins the decision and where the model is uncertain.
+              Serious fantasy players need more than a lineup. F1 DecisionIQ explains why one driver wins the decision and where the model is uncertain.
             </p>
           </div>
 
@@ -311,7 +311,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Model Transparency"
             title="Built for players who want to challenge the model."
-            description="PitWall Fantasy is designed to make each recommendation inspectable, comparable, and useful in Discord or Reddit strategy debates."
+            description="F1 DecisionIQ is designed to make each recommendation inspectable, comparable, and useful in Discord or Reddit strategy debates."
           />
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {transparencyItems.map((item) => (
@@ -353,7 +353,7 @@ export default function Home() {
         <div className="mx-auto max-w-3xl rounded-lg border border-white/10 bg-surface-900/90 p-6 text-center shadow-red-glow sm:p-10">
           <CheckCircle2 aria-hidden className="mx-auto h-10 w-10 text-pit-lime" />
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Join the PitWall Fantasy waitlist.
+            Join the F1 DecisionIQ waitlist.
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-300">
             Be first to test AI-powered recommendations before the next fantasy race weekend.
@@ -370,9 +370,9 @@ export default function Home() {
       <footer className="border-t border-white/10 px-5 py-8 sm:px-8 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-slate-400 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="font-semibold text-white">PitWall Fantasy</p>
+            <p className="font-semibold text-white">F1 DecisionIQ</p>
             <p className="mt-2 max-w-md">
-              AI-powered F1 Fantasy optimizer with explainable recommendations.
+              Fantasy Decision Engine for explainable F1 Fantasy recommendations.
             </p>
           </div>
           <p>Coming Soon</p>
