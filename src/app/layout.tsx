@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "F1 DecisionIQ | Fantasy Decision Engine",
+  title: "F1 GridIQ | F1 Fantasy Strategy Optimizer",
   description:
-    "Fantasy Decision Engine for explainable F1 Fantasy recommendations.",
+    "Explainable F1 Fantasy strategy optimizer for SAFE, BALANCED and AGGRESSIVE plans.",
   metadataBase: new URL("https://pitwallf1fantasy.com"),
   openGraph: {
-    title: "F1 DecisionIQ",
+    title: "F1 GridIQ",
     description:
-      "Fantasy Decision Engine for explainable F1 Fantasy recommendations.",
+      "Explainable F1 Fantasy strategy optimizer for SAFE, BALANCED and AGGRESSIVE plans.",
     url: "https://pitwallf1fantasy.com",
-    siteName: "F1 DecisionIQ",
+    siteName: "F1 GridIQ",
     type: "website",
   },
 };
